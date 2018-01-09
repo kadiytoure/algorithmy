@@ -11,43 +11,42 @@
 <body>
     <script>
         let str = "le chien marche vers sa niche et trouve une limace de chine nue pleine de malice qui lui fait du charme";
-        let phraseTab = str.split(" ");
-        console.log('phraseTab', phraseTab);
 
+        // convert string to array
+        let phraseTab = str.split(" ");
+        // create copy of array
+        let phraseTabCopy = phraseTab.slice(0);
+
+        // array of result
         let anagrams = [];
 
         for (let i = 0; i < phraseTab.length; i++) {
+            // convert word to array
             let word = phraseTab[i];
             let wordSorted = word.split('');
             wordSorted = wordSorted.sort();
-            console.log('wordSorted', wordSorted);
 
-            let ana = [];
+            let result = [];
 
-            for (let j = 0; j < phraseTab.length; j++) {
-                let word2 = phraseTab[j];
+            for (let j = 0; j < phraseTabCopy.length; j++) {
+                // convert word to array
+                let word2 = phraseTabCopy[j];
                 let wordSorted2 = word2.split('');
                 wordSorted2 = wordSorted2.sort();
-                console.log('----')
 
-                console.log('wordSorted2', wordSorted2);
-                console.log('wordSorted2.join()', wordSorted2.join())
-
+                // convert array sorted to string for comparison
                 if (wordSorted.join() === wordSorted2.join()) {
-                    ana.push(word2);
-
+                    result.push(word2);
+                    // remove element from phraseTabCopy
+                    phraseTabCopy.splice(j, 1);
                 }
             }
 
-            if (ana.length > 1) {
-                anagrams.push(ana);
+            // if 2 (or more) equals word, set to result
+            if (result.length > 1) {
+                anagrams.push(result);
             }
-
-
-
-
         }
-
         console.log(anagrams)
     </script>
 </body>
