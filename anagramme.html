@@ -11,11 +11,18 @@
 <body>
     <script>
         let str = "le chien marche vers sa niche et trouve une limace de chine nue pleine de malice qui lui fait du charme";
-        let res = str.split(" ");
-        console.log('res', res);
-        let l = ["le", "chien", "marche", "vers", "sa", "niche", "et", "trouve", "une", "limace", "de", "chine", "nue", "pleine", "de", "malice", "qui", "lui", "fait", "du", "charme"];
-        l.sort();
-        console.log('l', l);
+        let phraseTab = str.split(" ");
+        console.log('phraseTab', phraseTab);
+
+        for (let i = 0; i < phraseTab.length; i++) {
+            let word = phraseTab[i];
+            let wordSorted = word.split('');
+            wordSorted = wordSorted.sort();
+            console.log('wordSorted', wordSorted);
+
+
+
+        }
     </script>
 </body>
 
