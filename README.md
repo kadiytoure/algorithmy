@@ -1,0 +1,2 @@
+# algorithmy
+exercices about algorithmy
