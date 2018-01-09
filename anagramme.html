@@ -14,15 +14,41 @@
         let phraseTab = str.split(" ");
         console.log('phraseTab', phraseTab);
 
+        let anagrams = [];
+
         for (let i = 0; i < phraseTab.length; i++) {
             let word = phraseTab[i];
             let wordSorted = word.split('');
             wordSorted = wordSorted.sort();
             console.log('wordSorted', wordSorted);
 
+            let ana = [];
+
+            for (let j = 0; j < phraseTab.length; j++) {
+                let word2 = phraseTab[j];
+                let wordSorted2 = word2.split('');
+                wordSorted2 = wordSorted2.sort();
+                console.log('----')
+
+                console.log('wordSorted2', wordSorted2);
+                console.log('wordSorted2.join()', wordSorted2.join())
+
+                if (wordSorted.join() === wordSorted2.join()) {
+                    ana.push(word2);
+
+                }
+            }
+
+            if (ana.length > 1) {
+                anagrams.push(ana);
+            }
+
+
 
 
         }
+
+        console.log(anagrams)
     </script>
 </body>
 
