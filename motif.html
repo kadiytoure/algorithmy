@@ -11,16 +11,29 @@
 <body>
     <script>
         let s = "lalopallalali";
-        let p = "lala";
-        let Array = [];
-
-        for (let i = 0; i < s.length; i++) {
-            if (s[i] === p[0]) {
-
-                //return i;
+        let p = "lopa";
+        //let Array = [];
+        //parcours de lavariable S
+        function searchPattern(s, p) {
+            for (let i = 0; i < s.length; i++) {
+                if (s[i] === p[0]) {
+                    let isEqual = true;
+                    //boucle parcourant chaque lettre de la variable p;
+                    for (let j = 0; j < p.length; j++) {
+                        if (s[i + j] !== p[j]) {
+                            isEqual = false;
+                        }
+                        if (isEqual && j == p.length - 1) {
+                            return i;
+                        }
+                    }
+                }
             }
+            return -1;
         }
-        return -1;
+        let result = searchPattern(s, p);
+
+        console.log(result);
     </script>
 </body>
 
