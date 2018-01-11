@@ -31,11 +31,13 @@ function DisplayNav($menuData)
     //print_r ($menuData);
     echo '<ul>';
     foreach ($menuData as $item){
-        echo '<li>'. $item['title'] .'</li>';
+        echo '<li>'. $item['title'] . '<a>' . $item['url'] . '</a>' . '</li>';
+        //echo '<a>'. $item['url'] .'</a>';
 
 
         // tester si children exist
         // générer un sous menu depuis le tableau children
+        
 
         //echo "{$key} => {$value}";
         //print_r($title);
