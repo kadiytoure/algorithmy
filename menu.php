@@ -25,49 +25,17 @@ $menuData = [
     [ 'title' => 'CVG', 'url' => 'cgv.php', 'order' => 4]
 ];
 
-$string = "children";
-$team = "L\équipe";
+
 function DisplayNav($menuData)
 {
     //print_r ($menuData);
     echo '<ul>';
     foreach ($menuData as $item){
         echo '<li><a href="'. $item['url'] . '" >' . $item['title'] . '</a>';
-        //echo '<a>'. $item['url'] .'</a>';
-
-
-        // tester si children exist
-        // générer un sous menu depuis le tableau children
         if(isset($item['children'])) {
-            echo '<ul>';
-            
-            foreach ($item['children'] as $child) {
-                echo '<li><a href="'. $child['url'] . '" >' . $child['title'] . '</a>' . '</li>';
-
-                // 3e niveau de menu
-        if(isset($item['L\équipe'])) {
-             echo '<ul>';
-
-             foreach ($item['L\équipe'] as $team) {
-                  echo '<li><a href="'. $child['url'] . '" >' . $child['title'] . '</a>' . '</li>';
-             }
-        } 
-
-            }
-            
-            
-            echo '</ul>';
+            DisplayNav($item['children']);
         }
-
         echo '</li>';
-        //if(stristr($string, 'children') === TRUE)  {
-          //  
-          //  echo '<li>' . $item['children'] . '</li>';
-          //  echo '</ul>';
-        //}
-
-        //echo "{$key} => {$value}";
-        //print_r($title);
     }
     echo '</ul>';
     
