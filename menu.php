@@ -24,9 +24,23 @@ $menuData = [
     [ 'title' => 'FAQ', 'url' => 'faq.php', 'order' => 5],
     [ 'title' => 'CVG', 'url' => 'cgv.php', 'order' => 4]
 ];
+
+
 function DisplayNav($menuData)
 {
-    print_r ($menuData);
+    //print_r ($menuData);
+    echo '<ul>';
+    foreach ($menuData as $item){
+        echo '<li>'. $item['title'] .'</li>';
+
+
+        // tester si children exist
+        // générer un sous menu depuis le tableau children
+
+        //echo "{$key} => {$value}";
+        //print_r($title);
+    }
+    echo '</ul>';
 }
 
 DisplayNav($menuData);
