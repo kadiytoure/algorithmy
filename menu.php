@@ -24,4 +24,9 @@ $menuData = [
     [ 'title' => 'FAQ', 'url' => 'faq.php', 'order' => 5],
     [ 'title' => 'CVG', 'url' => 'cgv.php', 'order' => 4]
 ];
-   
+function DisplayNav($menuData)
+{
+    print_r ($menuData);
+}
+
+DisplayNav($menuData);
