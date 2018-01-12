@@ -10,30 +10,31 @@
 
 <body>
     <script>
-        let notUnique = ['a', 'a', 'a', 'aa', 'b', 'd', 'f', 'h', 'mm', 'n', 'o', 'b', 1, 2, 1, 2, 1, 'p', 'z', 'm', 'z'];
+        let notUniqueArray = ['a', 'a', 'a', 'aa', 'b', 'd', 'f', 'h', 'mm', 'n', 'o', 'b', 1, 2, 1, 2, 1, 'p', 'z', 'm', 'z'];
 
 
-        function deleteanagram(notUnique) {
+        function deleteanagram(notUniqueArray) {
             //let result = [];
-            let Unique = [];
-            for (let j = 0; j < notUnique.length; j++) {
-                console.log(notUnique[j]);
-                let elemNotUnique = notUnique[j];
-                //notUnique.sort();
-                //notUnique.join();
-                //notUnique.splice(j, 1);
-                for (let i = 0; i < Unique.length; i++) {
-                    let elemUnique = Unique[i];
-                    /*
-                    if () {
+            let UniqueArray = [];
+            for (let j = 0; j < notUniqueArray.length; j++) {
+                let elemToTest = notUniqueArray[j];
 
+                let existInUniqueArray = false;
+                for (let i = 0; i < UniqueArray.length; i++) {
+                    let elemUnique = UniqueArray[i];
+
+                    if (elemToTest === elemUnique) {
+                        existInUniqueArray = true;
                     }
-                    */
+                }
 
+                if (!existInUniqueArray) {
+                    UniqueArray.push(elemToTest);
                 }
 
             }
 
+            console.log('Unique', UniqueArray);
 
         }
 
@@ -48,7 +49,7 @@
             }
 */
 
-        deleteanagram(notUnique);
+        deleteanagram(notUniqueArray);
         //compareLetters(a, b);
     </script>
 </body>
