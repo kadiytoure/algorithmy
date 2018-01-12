@@ -18,16 +18,19 @@
             let Unique = [];
             for (let j = 0; j < notUnique.length; j++) {
                 console.log(notUnique[j]);
+                let elemNotUnique = notUnique[j];
                 //notUnique.sort();
                 //notUnique.join();
                 //notUnique.splice(j, 1);
-                for (let j = 0; j < Unique.length; j++) {
-                    let notUnique2 = notUnique[j];
+                for (let i = 0; i < Unique.length; i++) {
+                    let elemUnique = Unique[i];
+
+                    if (notUnique2 === Unique) {
+                        Unique.push(notUnique2);
+                    }
 
                 }
 
-                //if (notUnique2 !== Unique) {
-                //Unique.push(notUnique2);
             }
 
 
