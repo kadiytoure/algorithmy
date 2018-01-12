@@ -12,19 +12,40 @@
     <script>
         let notUnique = ['a', 'a', 'a', 'aa', 'b', 'd', 'f', 'h', 'mm', 'n', 'o', 'b', 1, 2, 1, 2, 1, 'p', 'z', 'm', 'z'];
 
+
         function deleteanagram(notUnique) {
-            let result = [];
+            //let result = [];
+            let Unique = [];
             for (let j = 0; j < notUnique.length; j++) {
                 console.log(notUnique[j]);
-                notUnique.sort();
-                notUnique.join();
-                notUnique.splice(j, 1);
+                //notUnique.sort();
+                //notUnique.join();
+                //notUnique.splice(j, 1);
+                for (let j = 0; j < Unique.length; j++) {
+                    let notUnique2 = notUnique[j];
 
+                }
+
+                //if (notUnique2 !== Unique) {
+                //Unique.push(notUnique2);
             }
 
 
         }
+
+        /*
+            
+
+            function compareLetters(a, b) {
+                return a - b;
+                for (let j = 0; j < notUnique.length; j++) {
+                    notUnique2.splice(j, 1);
+                }
+            }
+*/
+
         deleteanagram(notUnique);
+        //compareLetters(a, b);
     </script>
 </body>
 
